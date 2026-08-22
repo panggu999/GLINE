@@ -3,18 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>g-line · 下载</title>
-    <meta name="description" content="g-line 桌面端每日事项工具 · macOS 安装包下载" />
+    <title>g-line</title>
+    <meta name="description" content="g-line · 每日事项工具 · macOS 通用安装包" />
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <style>
       :root {
-        --bg: #f4f1ea;
-        --ink: #1c1917;
-        --muted: #78716c;
-        --line: #e7e0d6;
-        --card: #fffcf7;
-        --accent: #d97706;
-        --accent-ink: #fff7ed;
+        --bg: #fafafa;
+        --paper: #ffffff;
+        --ink: #262626;
+        --muted: #8e8e8e;
+        --line: #efefef;
+        --hair: #dbdbdb;
       }
       * {
         box-sizing: border-box;
@@ -33,98 +32,145 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 48px 20px;
+        padding: 72px 24px;
       }
       main {
-        width: min(440px, 100%);
+        width: min(380px, 100%);
+        text-align: center;
       }
-      .mark {
-        width: 44px;
-        height: 44px;
+      .avatar {
+        width: 92px;
+        height: 92px;
+        margin: 0 auto 28px;
         border-radius: 50%;
-        background: #fff;
-        border: 1.5px solid var(--line);
+        padding: 3px;
+        background: conic-gradient(
+          from 210deg,
+          #f9ce34,
+          #ee2a7b,
+          #6228d7,
+          #f9ce34
+        );
+      }
+      .avatar span {
         display: grid;
         place-items: center;
-        font-size: 22px;
-        margin-bottom: 20px;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: #fff;
+        font-size: 13px;
+        letter-spacing: 0.28em;
+        text-indent: 0.28em;
+        font-weight: 500;
+        color: var(--ink);
+      }
+      .kicker {
+        margin: 0 0 10px;
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--muted);
       }
       h1 {
-        margin: 0 0 8px;
-        font-size: 28px;
-        font-weight: 650;
+        margin: 0 0 10px;
+        font-family: "Iowan Old Style", "Palatino Linotype", Palatino,
+          "Songti SC", serif;
+        font-size: 42px;
+        font-weight: 400;
         letter-spacing: -0.03em;
       }
       .lead {
-        margin: 0 0 28px;
+        margin: 0 auto 36px;
+        max-width: 28em;
         color: var(--muted);
+        font-size: 14px;
+        line-height: 1.7;
+        font-weight: 400;
+      }
+      .stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0;
+        margin: 0 0 36px;
+        padding: 18px 0;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+      .stats b {
+        display: block;
         font-size: 15px;
-        line-height: 1.55;
-      }
-      .card {
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: 16px;
-        padding: 22px;
-      }
-      .meta {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        margin-bottom: 16px;
-        font-size: 13px;
-        color: var(--muted);
-      }
-      .ver {
-        font-variant-numeric: tabular-nums;
-        color: var(--ink);
         font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+      .stats span {
+        display: block;
+        margin-top: 4px;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        color: var(--muted);
       }
       a.btn {
         display: block;
-        text-align: center;
         text-decoration: none;
-        background: var(--accent);
-        color: var(--accent-ink);
-        border-radius: 999px;
-        padding: 12px 18px;
-        font-size: 15px;
+        background: #262626;
+        color: #fff;
+        border-radius: 10px;
+        padding: 13px 18px;
+        font-size: 14px;
         font-weight: 600;
+        letter-spacing: 0.02em;
+        transition: opacity 0.15s ease;
       }
       a.btn:hover {
-        filter: brightness(1.05);
+        opacity: 0.82;
       }
       .hint {
-        margin: 14px 0 0;
+        margin: 22px 0 0;
         font-size: 12px;
-        line-height: 1.6;
+        line-height: 1.75;
         color: var(--muted);
       }
+      .hint code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 11px;
+        color: #737373;
+      }
       footer {
-        margin-top: 28px;
-        font-size: 12px;
-        color: #a8a29e;
+        margin-top: 48px;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #c7c7c7;
       }
     </style>
   </head>
   <body>
     <main>
-      <div class="mark" aria-hidden="true">✦</div>
+      <div class="avatar" aria-hidden="true"><span>GL</span></div>
+      <p class="kicker">for macOS</p>
       <h1>g-line</h1>
-      <p class="lead">每日事项工具 · 必做门禁想做 · 柴犬陪伴。一个安装包同时支持 Apple 芯片和 Intel Mac。</p>
-      <div class="card">
-        <div class="meta">
-          <span>macOS 12+ · 通用 DMG</span>
-          <span>版本 <span class="ver" id="ver">0.1.0</span></span>
+      <p class="lead">每日事项，轻轻排好。必做门禁想做，柴犬在旁边看着。一个安装包，Apple 芯片和 Intel 都能用。</p>
+      <div class="stats">
+        <div>
+          <b>macOS</b>
+          <span>12+</span>
         </div>
-        <a class="btn" id="dl" href="./g-line.dmg" download="g-line.dmg">下载 g-line.dmg</a>
-        <p class="hint">
-          未签名应用，第一次打开若被拦截：右键安装包里的 g-line → 打开 → 仍要打开。
-          或在终端执行
-          <code>xattr -d com.apple.quarantine /Applications/g-line.app</code>
-        </p>
+        <div>
+          <b>Universal</b>
+          <span>arm · intel</span>
+        </div>
+        <div>
+          <b id="ver">0.1.0</b>
+          <span>version</span>
+        </div>
       </div>
-      <footer>本页只提供安装包，不含源码。</footer>
+      <a class="btn" href="./g-line.dmg" download="g-line.dmg">下载安装包</a>
+      <p class="hint">
+        未签名。若被拦截：右键 g-line → 打开。<br />
+        <code>xattr -d com.apple.quarantine /Applications/g-line.app</code>
+      </p>
+      <footer>download only</footer>
     </main>
     <script>
       fetch("./version.json", { cache: "no-store" })
