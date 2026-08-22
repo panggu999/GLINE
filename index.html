@@ -33,26 +33,37 @@
         padding: 72px 24px;
       }
       main {
-        width: min(380px, 100%);
+        width: min(420px, 100%);
         text-align: center;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 22px;
+        margin: 0 0 36px;
+        text-align: left;
       }
       .logo {
         display: block;
         width: 88px;
         height: 88px;
-        margin: 0 auto 28px;
+        flex-shrink: 0;
+      }
+      .brand-copy {
+        min-width: 0;
       }
       h1 {
-        margin: 0 0 10px;
+        margin: 0;
         font-family: "Iowan Old Style", "Palatino Linotype", Palatino,
           "Songti SC", serif;
         font-size: 42px;
         font-weight: 400;
         letter-spacing: -0.03em;
+        line-height: 1.1;
       }
       .lead {
-        margin: 0 auto 36px;
-        max-width: 28em;
+        margin: 10px 0 0;
         color: var(--muted);
         font-size: 14px;
         line-height: 1.7;
@@ -99,9 +110,13 @@
   </head>
   <body>
     <main>
-      <img class="logo" src="./icon.png" alt="G-Line" />
-      <h1>G-Line</h1>
-      <p class="lead">一件一件，慢慢实现</p>
+      <div class="brand">
+        <img class="logo" src="./icon.png" alt="" />
+        <div class="brand-copy">
+          <h1>G-Line</h1>
+          <p class="lead">一件一件，慢慢实现</p>
+        </div>
+      </div>
       <div class="stats">
         <div>
           <b>macOS</b>
