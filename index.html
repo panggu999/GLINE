@@ -3,17 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>g-line</title>
-    <meta name="description" content="g-line · 每日事项工具 · macOS 通用安装包" />
-    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <title>GLine</title>
+    <meta name="description" content="GLine · 每日事项工具 · macOS 通用安装包" />
+    <link rel="icon" href="./icon.png" type="image/png" />
     <style>
       :root {
         --bg: #fafafa;
-        --paper: #ffffff;
         --ink: #262626;
         --muted: #8e8e8e;
         --line: #efefef;
-        --hair: #dbdbdb;
       }
       * {
         box-sizing: border-box;
@@ -52,25 +50,13 @@
           #f9ce34
         );
       }
-      .avatar span {
-        display: grid;
-        place-items: center;
+      .avatar img {
+        display: block;
         width: 100%;
         height: 100%;
         border-radius: 50%;
+        object-fit: cover;
         background: #fff;
-        font-size: 13px;
-        letter-spacing: 0.28em;
-        text-indent: 0.28em;
-        font-weight: 500;
-        color: var(--ink);
-      }
-      .kicker {
-        margin: 0 0 10px;
-        font-size: 11px;
-        letter-spacing: 0.22em;
-        text-transform: uppercase;
-        color: var(--muted);
       }
       h1 {
         margin: 0 0 10px;
@@ -125,20 +111,14 @@
       a.btn:hover {
         opacity: 0.82;
       }
-      footer {
-        margin-top: 48px;
-        font-size: 11px;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: #c7c7c7;
-      }
     </style>
   </head>
   <body>
     <main>
-      <div class="avatar" aria-hidden="true"><span>GL</span></div>
-      <p class="kicker">for macOS</p>
-      <h1>g-line</h1>
+      <div class="avatar">
+        <img src="./icon.png" alt="GLine" />
+      </div>
+      <h1>GLine</h1>
       <p class="lead">每日事项，轻轻排好。必做门禁想做，柴犬在旁边看着。一个安装包，Apple 芯片和 Intel 都能用。</p>
       <div class="stats">
         <div>
@@ -155,7 +135,6 @@
         </div>
       </div>
       <a class="btn" href="./g-line.dmg" download="g-line.dmg">下载安装包</a>
-      <footer>download only</footer>
     </main>
     <script>
       fetch("./version.json", { cache: "no-store" })
