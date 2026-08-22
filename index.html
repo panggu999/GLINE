@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>g-line · 下载</title>
+    <meta name="description" content="g-line 桌面端每日事项工具 · macOS 安装包下载" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <style>
+      :root {
+        --bg: #f4f1ea;
+        --ink: #1c1917;
+        --muted: #78716c;
+        --line: #e7e0d6;
+        --card: #fffcf7;
+        --accent: #d97706;
+        --accent-ink: #fff7ed;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+          "PingFang SC", "Hiragino Sans GB", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 48px 20px;
+      }
+      main {
+        width: min(440px, 100%);
+      }
+      .mark {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: #fff;
+        border: 1.5px solid var(--line);
+        display: grid;
+        place-items: center;
+        font-size: 22px;
+        margin-bottom: 20px;
+      }
+      h1 {
+        margin: 0 0 8px;
+        font-size: 28px;
+        font-weight: 650;
+        letter-spacing: -0.03em;
+      }
+      .lead {
+        margin: 0 0 28px;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.55;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 22px;
+      }
+      .meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 16px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .ver {
+        font-variant-numeric: tabular-nums;
+        color: var(--ink);
+        font-weight: 600;
+      }
+      a.btn {
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        background: var(--accent);
+        color: var(--accent-ink);
+        border-radius: 999px;
+        padding: 12px 18px;
+        font-size: 15px;
+        font-weight: 600;
+      }
+      a.btn:hover {
+        filter: brightness(1.05);
+      }
+      .hint {
+        margin: 14px 0 0;
+        font-size: 12px;
+        line-height: 1.6;
+        color: var(--muted);
+      }
+      footer {
+        margin-top: 28px;
+        font-size: 12px;
+        color: #a8a29e;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="mark" aria-hidden="true">✦</div>
+      <h1>g-line</h1>
+      <p class="lead">每日事项工具 · 必做门禁想做 · 柴犬陪伴。一个安装包同时支持 Apple 芯片和 Intel Mac。</p>
+      <div class="card">
+        <div class="meta">
+          <span>macOS 12+ · 通用 DMG</span>
+          <span>版本 <span class="ver" id="ver">0.1.0</span></span>
+        </div>
+        <a class="btn" id="dl" href="./g-line.dmg" download="g-line.dmg">下载 g-line.dmg</a>
+        <p class="hint">
+          未签名应用，第一次打开若被拦截：右键安装包里的 g-line → 打开 → 仍要打开。
+          或在终端执行
+          <code>xattr -d com.apple.quarantine /Applications/g-line.app</code>
+        </p>
+      </div>
+      <footer>本页只提供安装包，不含源码。</footer>
+    </main>
+    <script>
+      fetch("./version.json", { cache: "no-store" })
+        .then((r) => (r.ok ? r.json() : null))
+        .then((v) => {
+          if (!v || !v.version) return;
+          document.getElementById("ver").textContent = v.version;
+        })
+        .catch(() => {});
+    </script>
+  </body>
+</html>
