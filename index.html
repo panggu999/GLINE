@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>GLine</title>
-    <meta name="description" content="GLine · 每日事项工具 · macOS 通用安装包" />
+    <title>G-Line</title>
+    <meta name="description" content="G-Line · 每日事项工具 · macOS 通用安装包" />
     <link rel="icon" href="./icon.png" type="image/png" />
     <style>
       :root {
@@ -36,27 +36,13 @@
         width: min(380px, 100%);
         text-align: center;
       }
-      .avatar {
-        width: 92px;
-        height: 92px;
-        margin: 0 auto 28px;
-        border-radius: 50%;
-        padding: 3px;
-        background: conic-gradient(
-          from 210deg,
-          #f9ce34,
-          #ee2a7b,
-          #6228d7,
-          #f9ce34
-        );
-      }
-      .avatar img {
+      .logo {
         display: block;
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
+        width: 96px;
+        height: 96px;
+        margin: 0 auto 28px;
+        border-radius: 22px;
         object-fit: cover;
-        background: #fff;
       }
       h1 {
         margin: 0 0 10px;
@@ -115,10 +101,8 @@
   </head>
   <body>
     <main>
-      <div class="avatar">
-        <img src="./icon.png" alt="GLine" />
-      </div>
-      <h1>GLine</h1>
+      <img class="logo" src="./icon.png" alt="G-Line" />
+      <h1>G-Line</h1>
       <p class="lead">一件一件，慢慢实现</p>
       <div class="stats">
         <div>
@@ -134,7 +118,7 @@
           <span>version</span>
         </div>
       </div>
-      <a class="btn" href="./g-line.dmg" download="g-line.dmg">下载安装包</a>
+      <a class="btn" href="./G-Line.dmg" download="G-Line.dmg">下载安装包</a>
     </main>
     <script>
       fetch("./version.json", { cache: "no-store" })
