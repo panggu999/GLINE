@@ -12,6 +12,9 @@
         --ink: #f5f5f5;
         --muted: #8e8e8e;
         --line: #2a2a2a;
+        --paper: #f7f7f5;
+        --ink-ui: #1f2937;
+        --amber: #f59e0b;
       }
       * {
         box-sizing: border-box;
@@ -27,60 +30,57 @@
         -webkit-font-smoothing: antialiased;
       }
       body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 72px 24px;
+        padding: 56px 24px 72px;
       }
-      main {
-        width: min(420px, 100%);
-        text-align: center;
+      .wrap {
+        width: min(980px, 100%);
+        margin: 0 auto;
+      }
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(240px, 340px) 1fr;
+        gap: 48px;
+        align-items: center;
       }
       .brand {
         display: flex;
         align-items: center;
-        justify-content: center;
-        gap: 22px;
-        margin: 0 0 36px;
+        gap: 18px;
         text-align: left;
       }
       .logo {
         display: block;
-        width: 88px;
-        height: 88px;
+        width: 72px;
+        height: 72px;
         flex-shrink: 0;
-      }
-      .brand-copy {
-        min-width: 0;
       }
       h1 {
         margin: 0;
         font-family: "Iowan Old Style", "Palatino Linotype", Palatino,
           "Songti SC", serif;
-        font-size: 42px;
+        font-size: 40px;
         font-weight: 400;
         letter-spacing: -0.03em;
         line-height: 1.1;
       }
       .lead {
-        margin: 10px 0 0;
+        margin: 8px 0 0;
         color: var(--muted);
         font-size: 14px;
         line-height: 1.7;
-        font-weight: 400;
       }
       .stats {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 0;
-        margin: 0 0 36px;
-        padding: 18px 0;
+        margin: 28px 0 22px;
+        padding: 14px 0;
         border-top: 1px solid var(--line);
         border-bottom: 1px solid var(--line);
       }
       .stats b {
         display: block;
-        font-size: 15px;
+        font-size: 14px;
         font-weight: 600;
         letter-spacing: -0.02em;
       }
@@ -93,6 +93,7 @@
       }
       a.btn {
         display: block;
+        text-align: center;
         text-decoration: none;
         background: #f5f5f5;
         color: #111;
@@ -107,41 +108,287 @@
         opacity: 0.82;
       }
       .gate {
-        margin: 16px 0 0;
+        margin: 14px 0 0;
         text-align: left;
         color: var(--muted);
         font-size: 12px;
         line-height: 1.6;
+      }
+      .stage {
+        position: relative;
+      }
+      .window {
+        background: var(--paper);
+        color: var(--ink-ui);
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid #2f2f2f;
+      }
+      .chrome {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 10px 12px;
+        background: #ecece8;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #d1d5db;
+      }
+      .ui {
+        padding: 14px 16px 16px;
+      }
+      .ui-head {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        margin-bottom: 12px;
+      }
+      .ui-kicker {
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        color: #9ca3af;
+      }
+      .ui-date {
+        margin-top: 2px;
+        font-size: 22px;
+        font-weight: 650;
+        letter-spacing: -0.03em;
+      }
+      .ui-date span {
+        margin-left: 8px;
+        font-size: 13px;
         font-weight: 400;
+        color: #9ca3af;
+      }
+      .ring {
+        width: 32px;
+        height: 32px;
+      }
+      .cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .col h3 {
+        margin: 0 0 8px;
+        font-size: 11px;
+        font-weight: 600;
+        color: #9ca3af;
+        letter-spacing: 0.04em;
+      }
+      .card {
+        background: #fff;
+        border-radius: 8px;
+        padding: 8px 10px;
+        margin-bottom: 6px;
+        font-size: 12px;
+        line-height: 1.4;
+        box-shadow: 0 0 0 1px #f3f4f6;
+      }
+      .card.done {
+        color: #9ca3af;
+        text-decoration: line-through;
+      }
+      .check {
+        display: inline-block;
+        width: 11px;
+        height: 11px;
+        margin-right: 6px;
+        border: 1.5px solid #d1d5db;
+        border-radius: 3px;
+        vertical-align: -1px;
+      }
+      .card.done .check {
+        background: #10b981;
+        border-color: #10b981;
+      }
+      .cycle {
+        margin-top: 12px;
+        padding-top: 10px;
+        border-top: 1px solid #ecece8;
+        font-size: 11px;
+        color: #6b7280;
+      }
+      .cycle b {
+        color: var(--ink-ui);
+        font-weight: 600;
+      }
+      .bar {
+        margin-top: 6px;
+        height: 4px;
+        background: #e5e7eb;
+        border-radius: 99px;
+        overflow: hidden;
+      }
+      .bar i {
+        display: block;
+        width: 40%;
+        height: 100%;
+        background: var(--amber);
+      }
+      .pet {
+        position: absolute;
+        right: -8px;
+        bottom: -18px;
+        width: 92px;
+        filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.35));
+        pointer-events: none;
+      }
+      .features {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0;
+        margin: 56px 0 0;
+        padding: 22px 0 0;
+        border-top: 1px solid var(--line);
+      }
+      .features h2 {
+        margin: 0 0 6px;
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .features p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.65;
+        padding-right: 20px;
+      }
+      @media (max-width: 780px) {
+        .hero,
+        .features {
+          grid-template-columns: 1fr;
+        }
+        .hero {
+          gap: 36px;
+        }
+        .features {
+          gap: 22px;
+        }
+        .features p {
+          padding-right: 0;
+        }
+        .pet {
+          right: 8px;
+          bottom: -10px;
+          width: 72px;
+        }
       }
     </style>
   </head>
   <body>
-    <main>
-      <div class="brand">
-        <img class="logo" src="./icon.png" alt="" />
-        <div class="brand-copy">
-          <h1>G-Line</h1>
-          <p class="lead">一件一件，慢慢实现</p>
+    <div class="wrap">
+      <div class="hero">
+        <div>
+          <div class="brand">
+            <img class="logo" src="./icon.png" alt="" />
+            <div>
+              <h1>G-Line</h1>
+              <p class="lead">一件一件，慢慢实现</p>
+            </div>
+          </div>
+          <div class="stats">
+            <div>
+              <b>macOS</b>
+              <span>12+</span>
+            </div>
+            <div>
+              <b>Universal</b>
+              <span>arm · intel</span>
+            </div>
+            <div>
+              <b id="ver">2026.8.24</b>
+              <span>version</span>
+            </div>
+          </div>
+          <a class="btn" href="./G-Line.dmg" download="G-Line.dmg">下载安装包</a>
+          <p class="gate">第一次打开可能被拦：系统设置 → 隐私与安全性，下方点「仍要打开」。</p>
+        </div>
+        <div class="stage">
+          <div class="window" aria-hidden="true">
+            <div class="chrome">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+            <div class="ui">
+              <div class="ui-head">
+                <div>
+                  <div class="ui-kicker">今天</div>
+                  <div class="ui-date">8月24日<span>周一</span></div>
+                </div>
+                <svg class="ring" viewBox="0 0 36 36">
+                  <circle cx="18" cy="18" r="14" stroke="#E5E7EB" stroke-width="3.5" fill="none" />
+                  <circle
+                    cx="18"
+                    cy="18"
+                    r="14"
+                    stroke="#F59E0B"
+                    stroke-width="3.5"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-dasharray="88"
+                    stroke-dashoffset="29"
+                    transform="rotate(-90 18 18)"
+                  />
+                  <text x="18" y="21.5" text-anchor="middle" font-size="9.5" font-weight="600" fill="#6B7280">2/3</text>
+                </svg>
+              </div>
+              <div class="cols">
+                <div class="col">
+                  <h3>必做</h3>
+                  <div class="card done"><span class="check"></span>写周报</div>
+                  <div class="card done"><span class="check"></span>回邮件</div>
+                  <div class="card"><span class="check"></span>整理待办</div>
+                </div>
+                <div class="col">
+                  <h3>想做</h3>
+                  <div class="card"><span class="check"></span>看书 30 分钟</div>
+                  <div class="card"><span class="check"></span>散步</div>
+                </div>
+              </div>
+              <div class="cycle">
+                <b>本月项目</b> · 发版准备
+                <div class="bar"><i></i></div>
+              </div>
+            </div>
+          </div>
+          <svg class="pet" viewBox="0 0 160 140" aria-hidden="true">
+            <ellipse cx="80" cy="128" rx="36" ry="6" fill="rgba(0,0,0,0.18)" />
+            <path
+              d="M 25 95 C 12 70, 15 38, 35 28 L 48 8 Q 60 22, 80 22 Q 100 22, 112 8 L 125 28 C 145 38, 148 70, 135 95 C 115 125, 45 125, 25 95 Z"
+              fill="#F5F5F4"
+              stroke="#111"
+              stroke-width="5"
+              stroke-linejoin="round"
+            />
+            <circle cx="60" cy="74" r="4.5" fill="#111" />
+            <circle cx="100" cy="74" r="4.5" fill="#111" />
+            <path d="M 76 88 L 84 88 L 80 94 Z" fill="#111" />
+            <path d="M 68 102 Q 80 110 92 102" fill="none" stroke="#111" stroke-width="3.5" stroke-linecap="round" />
+          </svg>
         </div>
       </div>
-      <div class="stats">
+      <div class="features">
         <div>
-          <b>macOS</b>
-          <span>12+</span>
+          <h2>今日必做</h2>
+          <p>先清完必做，再碰想做。一天只看当天。</p>
         </div>
         <div>
-          <b>Universal</b>
-          <span>arm · intel</span>
+          <h2>桌宠提醒</h2>
+          <p>主窗收起后，桌宠还在屏幕边上。</p>
         </div>
         <div>
-          <b id="ver">2026.8.24</b>
-          <span>version</span>
+          <h2>周期项目</h2>
+          <p>按周或按月推进，需要时拖进今天。</p>
         </div>
       </div>
-      <a class="btn" href="./G-Line.dmg" download="G-Line.dmg">下载安装包</a>
-      <p class="gate">第一次打开可能被拦：系统设置 → 隐私与安全性，下方点「仍要打开」。</p>
-    </main>
+    </div>
     <script>
       fetch("./version.json", { cache: "no-store" })
         .then((r) => (r.ok ? r.json() : null))
