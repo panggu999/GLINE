@@ -106,6 +106,23 @@
       a.btn:hover {
         opacity: 0.82;
       }
+      .gate {
+        margin: 28px 0 0;
+        text-align: left;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.7;
+      }
+      .gate p {
+        margin: 0 0 10px;
+      }
+      .gate ol {
+        margin: 0;
+        padding-left: 1.2em;
+      }
+      .gate li {
+        margin: 0 0 6px;
+      }
     </style>
   </head>
   <body>
@@ -132,6 +149,15 @@
         </div>
       </div>
       <a class="btn" href="./G-Line.dmg" download="G-Line.dmg">下载安装包</a>
+      <div class="gate">
+        <p>安装包未做苹果公证，第一次打开会提示有风险，这是系统拦截，不是病毒。</p>
+        <ol>
+          <li>把 G-Line 拖进「应用程序」，再打开一次。</li>
+          <li>弹出「无法验证 / 已损坏」时先关掉提示（不要移到废纸篓）。</li>
+          <li>打开「系统设置 → 隐私与安全性」，拉到最下面，点 G-Line 旁的「仍要打开」。</li>
+          <li>也可以在「应用程序」里按住 Control 点 G-Line → 打开 → 打开。</li>
+        </ol>
+      </div>
     </main>
     <script>
       fetch("./version.json", { cache: "no-store" })
