@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>G-Line</title>
-    <meta name="description" content="G-Line · 每日事项工具 · macOS 通用安装包" />
+    <meta name="description" content="G-Line · 每日事项工具 · macOS 通用安装包 · Windows 64 位" />
     <link rel="icon" href="./icon.png" type="image/png" />
     <style>
       :root {
@@ -106,6 +106,12 @@
       a.btn:hover {
         opacity: 0.82;
       }
+      a.btn-win {
+        margin-top: 10px;
+        background: transparent;
+        color: #f5f5f5;
+        box-shadow: inset 0 0 0 1px #3a3a3a;
+      }
       .gate {
         margin: 16px 0 0;
         text-align: left;
@@ -128,19 +134,21 @@
       <div class="stats">
         <div>
           <b>macOS</b>
-          <span>12+</span>
+          <span>12+ · universal</span>
         </div>
         <div>
-          <b>Universal</b>
-          <span>arm · intel</span>
+          <b>Win64</b>
+          <span>x64</span>
         </div>
         <div>
           <b id="ver">2026.8.26</b>
           <span>version</span>
         </div>
       </div>
-      <a class="btn" href="./G-Line.dmg" download="G-Line.dmg">下载安装包</a>
-      <p class="gate">第一次打开可能被拦：系统设置 → 隐私与安全性，下方点「仍要打开」。</p>
+      <a class="btn" href="./G-Line.dmg" download="G-Line.dmg">下载 macOS 安装包</a>
+      <a class="btn btn-win" href="./G-Line-win64.exe" download="G-Line-win64.exe">下载 Windows 64 位</a>
+      <p class="gate">macOS 第一次打开可能被拦：系统设置 → 隐私与安全性，下方点「仍要打开」。</p>
+      <p class="gate">Windows 10/11 x64，下载后直接打开。若被 SmartScreen 拦住：更多信息 → 仍要运行。</p>
     </main>
     <script>
       fetch("./version.json", { cache: "no-store" })
