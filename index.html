@@ -28,12 +28,13 @@
       }
       body {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
         padding: 72px 24px;
       }
       main {
         width: min(420px, 100%);
+        margin: auto;
         text-align: center;
       }
       .brand {
@@ -120,39 +121,25 @@
         line-height: 1.6;
         font-weight: 400;
       }
-      details.changelog {
-        margin-top: 28px;
+      .changelog {
+        margin-top: 36px;
         text-align: left;
-      }
-      details.changelog summary {
-        cursor: pointer;
-        list-style: none;
-        color: var(--muted);
-        font-size: 12px;
-        letter-spacing: 0.08em;
-        padding-bottom: 12px;
-      }
-      details.changelog summary::-webkit-details-marker {
-        display: none;
-      }
-      details.changelog summary::before {
-        content: "＋ ";
-      }
-      details.changelog[open] summary::before {
-        content: "－ ";
-      }
-      .cl-list {
-        max-height: 320px;
-        overflow-y: auto;
         border-top: 1px solid var(--line);
-        padding-top: 14px;
+        padding-top: 22px;
+      }
+      .changelog h2.cl-title {
+        margin: 0 0 18px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        color: var(--muted);
       }
       .cl-item {
-        margin-bottom: 16px;
+        margin-bottom: 22px;
       }
-      .cl-item h2 {
+      .cl-item h3 {
         margin: 0 0 6px;
-        font-size: 13px;
+        font-size: 14px;
         font-weight: 600;
         letter-spacing: 0.02em;
       }
@@ -162,8 +149,19 @@
       }
       .cl-item li {
         color: var(--muted);
+        font-size: 12.5px;
+        line-height: 1.8;
+      }
+      .privacy-link {
+        margin-top: 28px;
         font-size: 12px;
-        line-height: 1.7;
+      }
+      .privacy-link a {
+        color: var(--muted);
+        text-decoration: none;
+      }
+      .privacy-link a:hover {
+        color: var(--ink);
       }
     </style>
   </head>
@@ -192,12 +190,11 @@
       </div>
       <a class="btn" href="./G-Line.dmg" download="G-Line.dmg">下载 macOS 安装包</a>
       <a class="btn btn-win" href="./G-Line-win64.exe" download="G-Line-win64.exe">下载 Windows 64 位</a>
-      <p class="gate">macOS：系统设置 → 隐私与安全性，下方点「仍要打开」。</p>
-      <p class="gate"><a href="./privacy.html" style="color:#8e8e8e">隐私说明（语音输入）</a></p>
-      <details class="changelog" id="cl" style="display:none">
-        <summary>更新日志</summary>
-        <div class="cl-list" id="cl-list"></div>
-      </details>
+      <section class="changelog">
+        <h2 class="cl-title">更新日志</h2>
+        <div id="cl-list"></div>
+      </section>
+      <p class="privacy-link"><a href="./privacy.html">隐私说明</a></p>
     </main>
     <script>
       fetch("./version.json", { cache: "no-store" })
@@ -216,7 +213,7 @@
           for (const rel of list) {
             const item = document.createElement("div");
             item.className = "cl-item";
-            const h = document.createElement("h2");
+            const h = document.createElement("h3");
             h.textContent = rel.version;
             const ul = document.createElement("ul");
             for (const note of rel.notes || []) {
@@ -228,7 +225,6 @@
             item.appendChild(ul);
             box.appendChild(item);
           }
-          document.getElementById("cl").style.display = "";
         })
         .catch(() => {});
     </script>
