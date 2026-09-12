@@ -154,14 +154,14 @@
         font-weight: 600;
         letter-spacing: 0.02em;
       }
-      .cl-item ul {
+      .cl-item .cl-notes {
         margin: 0;
-        padding-left: 16px;
-      }
-      .cl-item li {
+        padding: 0;
+        list-style: none;
         color: var(--muted);
         font-size: 12.5px;
         line-height: 1.8;
+        white-space: pre-wrap;
       }
       .privacy-link {
         margin-top: 28px;
@@ -252,7 +252,7 @@
           <span>x64</span>
         </div>
         <div>
-          <b id="ver">2026.9.11</b>
+          <b id="ver">2026.9.13</b>
           <span>version</span>
         </div>
       </div>
@@ -291,15 +291,13 @@
             const item = document.createElement("div");
             item.className = "cl-item";
             const h = document.createElement("h3");
-            h.textContent = rel.version;
-            const ul = document.createElement("ul");
-            for (const note of rel.notes || []) {
-              const li = document.createElement("li");
-              li.textContent = note;
-              ul.appendChild(li);
-            }
+            const notes = (rel.notes || []).map((n) => String(n).trim()).filter(Boolean);
+            h.textContent = rel.version + " 更新说明：";
+            const body = document.createElement("div");
+            body.className = "cl-notes";
+            body.textContent = notes.map((n, i) => (i + 1) + "、" + n).join("\n");
             item.appendChild(h);
-            item.appendChild(ul);
+            item.appendChild(body);
             box.appendChild(item);
           }
         })
