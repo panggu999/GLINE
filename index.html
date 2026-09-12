@@ -177,6 +177,52 @@
       .privacy-link a:hover {
         color: var(--ink);
       }
+      .modal-mask {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.62);
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+      }
+      .modal-mask.open {
+        display: flex;
+      }
+      .modal {
+        width: min(320px, 88vw);
+        background: #1a1a1a;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 26px 24px 20px;
+        text-align: center;
+      }
+      .modal p {
+        margin: 0 0 18px;
+        font-size: 13px;
+        line-height: 1.9;
+        color: var(--ink);
+      }
+      .modal a {
+        color: var(--ink);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      .modal button {
+        font: inherit;
+        width: 100%;
+        border: 0;
+        border-radius: 10px;
+        padding: 11px 0;
+        font-size: 13px;
+        font-weight: 600;
+        background: #f5f5f5;
+        color: #111;
+        cursor: pointer;
+      }
+      .modal button:hover {
+        opacity: 0.82;
+      }
       @media (max-width: 760px) {
         body {
           padding: 40px 20px;
@@ -219,6 +265,13 @@
         <div id="cl-list"></div>
       </section>
       <p class="privacy-link"><a href="./privacy.html">隐私说明</a></p>
+      <p class="privacy-link" style="margin-top:8px;padding-top:0;border-top:0"><a href="#" id="contact-open">合作联系</a></p>
+      <div class="modal-mask" id="contact-modal">
+        <div class="modal" role="dialog" aria-modal="true" aria-label="合作联系">
+          <p>有合作意向，请发送邮件到<br /><a href="mailto:panggu999@yeah.net">panggu999@yeah.net</a></p>
+          <button type="button" id="contact-ok">确认</button>
+        </div>
+      </div>
     </main>
     <script>
       fetch("./version.json", { cache: "no-store" })
@@ -251,6 +304,26 @@
           }
         })
         .catch(() => {});
+      (function () {
+        var modal = document.getElementById("contact-modal");
+        var ok = document.getElementById("contact-ok");
+        function close() {
+          modal.classList.remove("open");
+        }
+        document.getElementById("contact-open").addEventListener("click", function (e) {
+          e.preventDefault();
+          modal.classList.add("open");
+          ok.focus();
+        });
+        ok.addEventListener("click", close);
+        document.addEventListener("keydown", function (e) {
+          if (!modal.classList.contains("open")) return;
+          if (e.key === "Escape" || e.key === "Enter") {
+            e.preventDefault();
+            close();
+          }
+        });
+      })();
     </script>
   </body>
 </html>
