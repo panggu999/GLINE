@@ -252,7 +252,7 @@
           <span>x64</span>
         </div>
         <div>
-          <b id="ver">2026.9.13</b>
+          <b id="ver">2026.9.13.2</b>
           <span>version</span>
         </div>
       </div>
@@ -278,7 +278,11 @@
         .then((r) => (r.ok ? r.json() : null))
         .then((v) => {
           if (!v || !v.version) return;
-          document.getElementById("ver").textContent = v.version;
+          // 工程版本 YYYY.M.D+次数 → 展示 YYYY.M.D.次数
+          var shown = String(v.version).indexOf("+") >= 0
+            ? String(v.version).replace("+", ".")
+            : String(v.version);
+          document.getElementById("ver").textContent = shown;
         })
         .catch(() => {});
       fetch("./changelog.json", { cache: "no-store" })
