@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>G-Line · 隐私说明</title>
+    <link rel="icon" href="./icon.png" type="image/png" />
+    <style>
+      :root {
+        --bg: #111111;
+        --ink: #f5f5f5;
+        --muted: #8e8e8e;
+        --line: #2a2a2a;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100%;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+          "PingFang SC", "Hiragino Sans GB", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        padding: 48px 24px 72px;
+        line-height: 1.7;
+      }
+      main {
+        width: min(560px, 100%);
+        margin: 0 auto;
+      }
+      h1 {
+        margin: 0 0 8px;
+        font-size: 28px;
+        font-weight: 500;
+      }
+      h2 {
+        margin: 28px 0 8px;
+        font-size: 15px;
+        font-weight: 600;
+      }
+      p,
+      li {
+        margin: 0 0 10px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      strong {
+        color: var(--ink);
+        font-weight: 500;
+      }
+      a {
+        color: #fbbf24;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .back {
+        display: inline-block;
+        margin-bottom: 28px;
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <a class="back" href="./">← 返回下载</a>
+      <h1>隐私说明</h1>
+      <p>关于桌宠「必做速记 → 语音输入」。</p>
+
+      <h2>我们收集什么</h2>
+      <p>
+        仅在你主动点击「语音输入」时使用麦克风。转写文字写在本地输入框，用于整理今日必做。
+        语音输入<strong>不经过</strong> G-Line 自有服务器，也不走「设置 → AI」里的 API。
+      </p>
+
+      <h2>可能上传到系统厂商</h2>
+      <p>
+        识别使用系统 / WebView 能力（macOS 多为 Apple；Windows 上可能使用 Microsoft 相关服务）。
+        <strong>开始语音输入后，音频可能离开本机，由 Apple、Microsoft 等系统厂商处理。</strong>
+      </p>
+
+      <h2>可以拒绝</h2>
+      <p>
+        系统询问权限时可点不允许。拒绝后仍可<strong>手打</strong>事项。也可随时在系统设置中关闭授权。
+      </p>
+
+      <h2>录音提示</h2>
+      <p>语音输入进行中，界面会显示「正在听」；点「停止」即结束。</p>
+    </main>
+  </body>
+</html>
