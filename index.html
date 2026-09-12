@@ -120,6 +120,51 @@
         line-height: 1.6;
         font-weight: 400;
       }
+      details.changelog {
+        margin-top: 28px;
+        text-align: left;
+      }
+      details.changelog summary {
+        cursor: pointer;
+        list-style: none;
+        color: var(--muted);
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        padding-bottom: 12px;
+      }
+      details.changelog summary::-webkit-details-marker {
+        display: none;
+      }
+      details.changelog summary::before {
+        content: "＋ ";
+      }
+      details.changelog[open] summary::before {
+        content: "－ ";
+      }
+      .cl-list {
+        max-height: 320px;
+        overflow-y: auto;
+        border-top: 1px solid var(--line);
+        padding-top: 14px;
+      }
+      .cl-item {
+        margin-bottom: 16px;
+      }
+      .cl-item h2 {
+        margin: 0 0 6px;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+      }
+      .cl-item ul {
+        margin: 0;
+        padding-left: 16px;
+      }
+      .cl-item li {
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.7;
+      }
     </style>
   </head>
   <body>
@@ -148,6 +193,11 @@
       <a class="btn" href="./G-Line.dmg" download="G-Line.dmg">下载 macOS 安装包</a>
       <a class="btn btn-win" href="./G-Line-win64.exe" download="G-Line-win64.exe">下载 Windows 64 位</a>
       <p class="gate">macOS：系统设置 → 隐私与安全性，下方点「仍要打开」。</p>
+      <p class="gate"><a href="./privacy.html" style="color:#8e8e8e">隐私说明（语音输入）</a></p>
+      <details class="changelog" id="cl" style="display:none">
+        <summary>更新日志</summary>
+        <div class="cl-list" id="cl-list"></div>
+      </details>
     </main>
     <script>
       fetch("./version.json", { cache: "no-store" })
@@ -155,6 +205,30 @@
         .then((v) => {
           if (!v || !v.version) return;
           document.getElementById("ver").textContent = v.version;
+        })
+        .catch(() => {});
+      fetch("./changelog.json", { cache: "no-store" })
+        .then((r) => (r.ok ? r.json() : null))
+        .then((data) => {
+          const list = (data && data.releases) || [];
+          if (!list.length) return;
+          const box = document.getElementById("cl-list");
+          for (const rel of list) {
+            const item = document.createElement("div");
+            item.className = "cl-item";
+            const h = document.createElement("h2");
+            h.textContent = rel.version;
+            const ul = document.createElement("ul");
+            for (const note of rel.notes || []) {
+              const li = document.createElement("li");
+              li.textContent = note;
+              ul.appendChild(li);
+            }
+            item.appendChild(h);
+            item.appendChild(ul);
+            box.appendChild(item);
+          }
+          document.getElementById("cl").style.display = "";
         })
         .catch(() => {});
     </script>
