@@ -1,19 +1,19 @@
 {
-  "version": "2026.9.13+2",
-  "notes": "2026.9.13.2 更新说明：\n1、常规优化",
-  "pub_date": "2026-09-12T19:37:33Z",
+  "version": "2026.9.13+3",
+  "notes": "2026.9.13.3 更新说明：\n1、长期项目移至日历下方，支持搜索。默认折叠\n2、删除支持顶部撤销胶囊",
+  "pub_date": "2026-09-13T15:43:15Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSS1Z0dkxMVUVEVnB6NTFTTEVxUWtkWFVqdkdWMVdSSHBxaUJqSEVvRlU1QnpCMTg5MWhFV01Ya3hZUEZvVU4zYzdCUWhBMWpvVDI3VHdkT2NoMWdxSk56YmRoenJuL0E4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5MjQxODEyCWZpbGU6Ry1MaW5lLmFwcC50YXIuZ3oKUUhqeFFRd0p6OFF5azdCV01tTXh0cGR1MHZnbG92UmVPbkhtTEd6L0dLc2JKSm1kRnZGL3lUdU1wZ2o2SXdmK1JKZVBJQ1RUaWxMcTRXc0hLWndiQ0E9PQo=",
-      "url": "https://panggu999.github.io/GLINE/G-Line_2026.9.13+2_universal.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSS1Z0dkxMVUVEVm5SQkpiaWdmaldjRHhVWnBKdVFwbjBTbURMbkFLY01NNmplNHZLSlRsM3pZV1hzUkhRaXExQ29ld283MWJxTFNiNEFrZjlXRExWckNjRFhVb3RqOXdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5MzE0MTg4CWZpbGU6Ry1MaW5lLmFwcC50YXIuZ3oKNnNER3pBN3p5SkkyZUtFb0pCUWJrYTJvd1dBa3g3OEd2aFp0ZUpRVmZlaGx5R2hOeFo5Z1VFcFlTOWd1cGNUdUVVay9ldjBSS2RLK252cGJmVEZPREE9PQo=",
+      "url": "https://panggu999.github.io/GLINE/G-Line_2026.9.13+3_universal.app.tar.gz"
     },
     "darwin-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSS1Z0dkxMVUVEVnB6NTFTTEVxUWtkWFVqdkdWMVdSSHBxaUJqSEVvRlU1QnpCMTg5MWhFV01Ya3hZUEZvVU4zYzdCUWhBMWpvVDI3VHdkT2NoMWdxSk56YmRoenJuL0E4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5MjQxODEyCWZpbGU6Ry1MaW5lLmFwcC50YXIuZ3oKUUhqeFFRd0p6OFF5azdCV01tTXh0cGR1MHZnbG92UmVPbkhtTEd6L0dLc2JKSm1kRnZGL3lUdU1wZ2o2SXdmK1JKZVBJQ1RUaWxMcTRXc0hLWndiQ0E9PQo=",
-      "url": "https://panggu999.github.io/GLINE/G-Line_2026.9.13+2_universal.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSS1Z0dkxMVUVEVm5SQkpiaWdmaldjRHhVWnBKdVFwbjBTbURMbkFLY01NNmplNHZLSlRsM3pZV1hzUkhRaXExQ29ld283MWJxTFNiNEFrZjlXRExWckNjRFhVb3RqOXdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5MzE0MTg4CWZpbGU6Ry1MaW5lLmFwcC50YXIuZ3oKNnNER3pBN3p5SkkyZUtFb0pCUWJrYTJvd1dBa3g3OEd2aFp0ZUpRVmZlaGx5R2hOeFo5Z1VFcFlTOWd1cGNUdUVVay9ldjBSS2RLK252cGJmVEZPREE9PQo=",
+      "url": "https://panggu999.github.io/GLINE/G-Line_2026.9.13+3_universal.app.tar.gz"
     },
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSS1Z0dkxMVUVEVnZIcGdGT2NLcWIyM2VXNXdES2xsOG1yK29YUzlyaHJqTkM2V0NrS29IeERPRlovaWVMSEMrSDR4S3lFRnlteVlLcDhQcGhUMUZIcmdNZzRIQUUyUmcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5MjQxMDc4CWZpbGU6Ry1MaW5lXzIwMjYuOS4xMysyX3g2NC1zZXR1cC5leGUKRGtuQnBRM3B1Yi9FSEVvck1yeXp5bCthYTdTa0x3cTBGb1VOdzdnNTZLdEVuTzlGVmlkUS9TV0RNL0lZQ1VuTEI2OURvS0RDWDdRTzdsTFlVaC9OQ3c9PQo=",
-      "url": "https://panggu999.github.io/GLINE/G-Line_2026.9.13+2_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSS1Z0dkxMVUVEVmdCUkticDgzL0MvYU5lMVRacE0zdS9Fb05xb1NmZlNNczNNZENHYk9LaGU2bmxYN0dRZ1RvcHk0ajBKcktkWG9DeDk1bjVjdEFaQzhad3ZzU0M1b0F3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5MzEzMTIxCWZpbGU6Ry1MaW5lXzIwMjYuOS4xMyszX3g2NC1zZXR1cC5leGUKVm16dWtacms5M2JWTXFWSWxmVFhLUUkvSklya0ZMSTNwVXUvTHp0dEpGQythMTYxS2JpVWtNSEVnbmUxeGl6a3Q3SGZUUmt3WHgxOXFDQTNEQVBSQUE9PQo=",
+      "url": "https://panggu999.github.io/GLINE/G-Line_2026.9.13+3_x64-setup.exe"
     }
   }
 }
