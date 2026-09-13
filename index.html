@@ -1,331 +1,93 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>G-Line</title>
-    <meta name="description" content="G-Line · 每日事项工具 · macOS 通用安装包 · Windows 64 位" />
-    <link rel="icon" href="./icon.png" type="image/png" />
-    <style>
-      :root {
-        --bg: #111111;
-        --ink: #f5f5f5;
-        --muted: #8e8e8e;
-        --line: #2a2a2a;
-      }
-      * {
-        box-sizing: border-box;
-      }
-      html,
-      body {
-        margin: 0;
-        min-height: 100%;
-        background: var(--bg);
-        color: var(--ink);
-        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
-          "PingFang SC", "Hiragino Sans GB", sans-serif;
-        -webkit-font-smoothing: antialiased;
-      }
-      body {
-        display: flex;
-        align-items: flex-start;
-        justify-content: center;
-        padding: 56px 32px;
-      }
-      main {
-        width: min(1200px, 100%);
-        margin: auto;
-        text-align: center;
-      }
-      .brand {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 22px;
-        margin: 0 0 36px;
-        text-align: left;
-      }
-      .logo {
-        display: block;
-        width: 88px;
-        height: 88px;
-        flex-shrink: 0;
-      }
-      .brand-copy {
-        min-width: 0;
-      }
-      h1 {
-        margin: 0;
-        font-family: "Iowan Old Style", "Palatino Linotype", Palatino,
-          "Songti SC", serif;
-        font-size: 42px;
-        font-weight: 400;
-        letter-spacing: -0.03em;
-        line-height: 1.1;
-      }
-      .lead {
-        margin: 10px 0 0;
-        color: var(--muted);
-        font-size: 14px;
-        line-height: 1.7;
-        font-weight: 400;
-      }
-      .stats {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 0;
-        margin: 0 0 36px;
-        padding: 18px 0;
-        border-top: 1px solid var(--line);
-        border-bottom: 1px solid var(--line);
-      }
-      .stats b {
-        display: block;
-        font-size: 15px;
-        font-weight: 600;
-        letter-spacing: -0.02em;
-      }
-      .stats span {
-        display: block;
-        margin-top: 4px;
-        font-size: 11px;
-        letter-spacing: 0.08em;
-        color: var(--muted);
-      }
-      a.btn {
-        display: block;
-        text-decoration: none;
-        background: #f5f5f5;
-        color: #111;
-        border-radius: 10px;
-        padding: 13px 18px;
-        font-size: 14px;
-        font-weight: 600;
-        letter-spacing: 0.02em;
-        transition: opacity 0.15s ease;
-      }
-      a.btn:hover {
-        opacity: 0.82;
-      }
-      .btn-row {
-        display: flex;
-        gap: 10px;
-      }
-      .btn-row a.btn {
-        flex: 1;
-      }
-      a.btn-win {
-        background: transparent;
-        color: #f5f5f5;
-        box-shadow: inset 0 0 0 1px #3a3a3a;
-      }
-      .gate {
-        margin: 16px 0 0;
-        text-align: left;
-        color: var(--muted);
-        font-size: 12px;
-        line-height: 1.6;
-        font-weight: 400;
-      }
-      .changelog {
-        margin-top: 36px;
-        text-align: left;
-        border-top: 1px solid var(--line);
-        padding-top: 22px;
-      }
-      .changelog h2.cl-title {
-        margin: 0 0 18px;
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: 0.12em;
-        color: var(--muted);
-      }
-      #cl-list {
-        columns: 2;
-        column-gap: 64px;
-      }
-      .cl-item {
-        break-inside: avoid;
-        margin-bottom: 24px;
-      }
-      .cl-item h3 {
-        margin: 0 0 6px;
-        font-size: 14px;
-        font-weight: 600;
-        letter-spacing: 0.02em;
-      }
-      .cl-item .cl-notes {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        color: var(--muted);
-        font-size: 12.5px;
-        line-height: 1.8;
-        white-space: pre-wrap;
-      }
-      .privacy-link {
-        margin-top: 28px;
-        padding-top: 18px;
-        border-top: 1px solid var(--line);
-        text-align: left;
-        font-size: 12px;
-      }
-      .privacy-link a {
-        color: var(--muted);
-        text-decoration: none;
-      }
-      .privacy-link a:hover {
-        color: var(--ink);
-      }
-      .modal-mask {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.62);
-        align-items: center;
-        justify-content: center;
-        z-index: 10;
-      }
-      .modal-mask.open {
-        display: flex;
-      }
-      .modal {
-        width: min(420px, 88vw);
-        background: #1a1a1a;
-        border: 1px solid var(--line);
-        border-radius: 12px;
-        padding: 26px 24px 20px;
-        text-align: center;
-      }
-      .modal p {
-        margin: 0 0 18px;
-        font-size: 13px;
-        line-height: 1.9;
-        color: var(--ink);
-      }
-      .modal a {
-        color: var(--ink);
-        text-decoration: underline;
-        text-underline-offset: 3px;
-      }
-      .modal button {
-        font: inherit;
-        width: 100%;
-        border: 0;
-        border-radius: 10px;
-        padding: 11px 0;
-        font-size: 13px;
-        font-weight: 600;
-        background: #f5f5f5;
-        color: #111;
-        cursor: pointer;
-      }
-      .modal button:hover {
-        opacity: 0.82;
-      }
-      @media (max-width: 760px) {
-        body {
-          padding: 40px 20px;
-        }
-        #cl-list {
-          columns: 1;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <main>
-      <div class="brand">
-        <img class="logo" src="./icon.png" alt="" />
-        <div class="brand-copy">
-          <h1>G-Line</h1>
-          <p class="lead">一件一件，慢慢实现</p>
-        </div>
-      </div>
-      <div class="stats">
-        <div>
-          <b>macOS</b>
-          <span>12+ · universal</span>
-        </div>
-        <div>
-          <b>Win64</b>
-          <span>x64</span>
-        </div>
-        <div>
-          <b id="ver">2026.9.13.2</b>
-          <span>version</span>
-        </div>
-      </div>
-      <div class="btn-row">
-        <a class="btn" href="./G-Line.dmg" download="G-Line.dmg">下载 macOS 安装包</a>
-        <a class="btn btn-win" href="./G-Line-win64.exe" download="G-Line-win64.exe">下载 Windows 64 位</a>
-      </div>
-      <section class="changelog">
-        <h2 class="cl-title">更新日志</h2>
-        <div id="cl-list"></div>
-      </section>
-      <p class="privacy-link"><a href="./privacy.html">隐私说明</a></p>
-      <p class="privacy-link" style="margin-top:8px;padding-top:0;border-top:0"><a href="#" id="contact-open">合作联系</a></p>
-      <div class="modal-mask" id="contact-modal">
-        <div class="modal" role="dialog" aria-modal="true" aria-label="合作联系">
-          <p>有合作意向，请发送邮件到 <a href="mailto:panggu999@yeah.net">panggu999@yeah.net</a></p>
-          <button type="button" id="contact-ok">确认</button>
-        </div>
-      </div>
-    </main>
-    <script>
-      fetch("./version.json", { cache: "no-store" })
-        .then((r) => (r.ok ? r.json() : null))
-        .then((v) => {
-          if (!v || !v.version) return;
-          // 工程版本 YYYY.M.D+次数 → 展示 YYYY.M.D.次数
-          var shown = String(v.version).indexOf("+") >= 0
-            ? String(v.version).replace("+", ".")
-            : String(v.version);
-          document.getElementById("ver").textContent = shown;
-        })
-        .catch(() => {});
-      fetch("./changelog.json", { cache: "no-store" })
-        .then((r) => (r.ok ? r.json() : null))
-        .then((data) => {
-          const list = (data && data.releases) || [];
-          if (!list.length) return;
-          const box = document.getElementById("cl-list");
-          for (const rel of list) {
-            const item = document.createElement("div");
-            item.className = "cl-item";
-            const h = document.createElement("h3");
-            const notes = (rel.notes || []).map((n) => String(n).trim()).filter(Boolean);
-            h.textContent = rel.version + " 更新说明：";
-            const body = document.createElement("div");
-            body.className = "cl-notes";
-            body.textContent = notes.map((n, i) => (i + 1) + "、" + n).join("\n");
-            item.appendChild(h);
-            item.appendChild(body);
-            box.appendChild(item);
-          }
-        })
-        .catch(() => {});
-      (function () {
-        var modal = document.getElementById("contact-modal");
-        var ok = document.getElementById("contact-ok");
-        function close() {
-          modal.classList.remove("open");
-        }
-        document.getElementById("contact-open").addEventListener("click", function (e) {
-          e.preventDefault();
-          modal.classList.add("open");
-          ok.focus();
-        });
-        ok.addEventListener("click", close);
-        document.addEventListener("keydown", function (e) {
-          if (!modal.classList.contains("open")) return;
-          if (e.key === "Escape" || e.key === "Enter") {
-            e.preventDefault();
-            close();
-          }
-        });
-      })();
-    </script>
-  </body>
-</html>
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="GLINE，你的 AI 桌面待办。从随手记录到清晰行动，支持 Windows 和 macOS。"><title>GLINE · 想清楚，做得到。</title><link rel="icon" href="./icon.png">
+<style>
+:root{--ink:#29251f;--muted:#797168;--paper:#fffcf7;--green:#fde4ad;--border:#eae2d6}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,"Microsoft YaHei",sans-serif}a{color:inherit;text-decoration:none}button,select{font:inherit}header,main,footer{max-width:1240px;margin:auto}header{height:100px;display:flex;justify-content:space-between;align-items:center;padding:0 40px}.logo{font-size:25px;font-weight:800;letter-spacing:-1px;display:flex;align-items:center;gap:10px}.logo img{width:32px;height:32px}nav{display:flex;gap:30px;font-size:13px}nav a:hover{text-decoration:underline}.edition{font-size:11px;letter-spacing:2px}.hero{padding:65px 40px 85px;display:grid;grid-template-columns:.9fr 1.1fr;gap:55px;align-items:center}.eyebrow{font-size:11px;letter-spacing:2px;display:flex;align-items:center;gap:8px}.eyebrow:before{content:'';width:7px;height:7px;background:#f59e0b;border-radius:50%}h1{font-size:clamp(44px,5vw,68px);line-height:1.22;letter-spacing:-3px;margin:28px 0 23px}h1 span{position:relative;z-index:0}h1 span:after{content:'';position:absolute;bottom:4px;left:0;width:100%;height:20px;background:var(--green);z-index:-1;border-radius:50%}p{color:var(--muted);font-size:14px;line-height:1.9}.intro{max-width:360px}.download-control{display:flex;gap:8px;margin:30px 0 12px;flex-wrap:wrap}.download-button{background:var(--ink);color:white;padding:15px 22px;border-radius:999px;font-size:14px;display:inline-flex;gap:22px;align-items:center}.download-button:hover{background:#d97706}.fine{font-size:11px;color:var(--muted)}.stage{position:relative;padding:35px 0 40px 12px}.stage:before{content:'';position:absolute;inset:-25px -10px -10px 20px;background:#fff0d6;border-radius:50%;z-index:-1}.window{background:#fffef9;border:1px solid #d9dece;border-radius:15px;box-shadow:0 24px 60px #243e3514;overflow:hidden;transform:rotate(-2deg)}.bar{height:36px;border-bottom:1px solid #e8eadd;display:flex;align-items:center;gap:5px;padding:0 14px;font-size:10px;color:#939b89}.dot{width:6px;height:6px;border-radius:50%;background:#cbd2c0}.caption{text-align:right;font-size:10px;color:#89917f;margin-top:20px}.features{border-top:1px solid var(--border);padding:45px 40px 65px}.section-head{display:flex;justify-content:space-between;align-items:center}.section-head h2{font-size:27px;letter-spacing:-1px}.section-head span{font-size:10px;letter-spacing:2px;color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}.card{padding:26px;border-radius:14px;background:#fff1d9}.card:nth-child(2){background:#f7ece2}.card:nth-child(3){background:#f1eee8}.card .number{font-size:11px;color:#8e7960}.card h3{font-size:18px;margin:25px 0 8px}.card p{font-size:12px;margin:0}.note{font-size:11px;margin-top:20px}footer{border-top:1px solid var(--border);padding:25px 40px 35px;display:flex;justify-content:space-between;font-size:11px;color:var(--muted)}a:focus-visible,select:focus-visible{outline:3px solid #f59e0b;outline-offset:4px}@media(max-width:900px){.hero{gap:25px;padding-top:35px}h1{font-size:48px}}@media(max-width:650px){header{height:75px;padding:0 22px}.edition{display:none}.hero{grid-template-columns:1fr;padding:30px 22px 45px;gap:35px}h1{font-size:50px}.intro{max-width:none}.stage{padding-right:12px}.stage:before{inset:0}.features{padding:25px 22px 40px}.section-head{display:block}.cards{grid-template-columns:1fr}.card h3{margin-top:15px}footer{padding:25px 22px;gap:20px;flex-wrap:wrap}}
+
+/* Orange application palette and fully rounded download menu. */
+[hidden]{display:none!important}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}
+.hero{grid-template-columns:.8fr 1.2fr;gap:46px}
+.stage{margin:0;min-width:0;padding:30px 0 20px}
+.window{border-color:#e8dfd2;background:#fff}
+.bar{background:#fffdf9;border-color:#eee8de;color:#9b9183}
+.dot{background:#dfd5c6}.workspace{width:100%;height:auto;display:block}
+.download-button{background:#f59e0b;color:#302007;font-weight:600;gap:16px}
+.download-button:hover{background:#fbbf24}
+.platform-picker{position:relative}
+#platform{display:flex;align-items:center;justify-content:space-between;gap:15px;min-width:180px;background:#fff;border:1px solid #e0d5c4;border-radius:999px;padding:14px 18px;color:var(--ink);font-size:13px;font-weight:700;cursor:pointer}
+#platform:hover,#platform[aria-expanded=true]{border-color:#f59e0b}
+.chevron{font-size:17px;line-height:18px}
+.platform-menu{position:absolute;top:calc(100% + 9px);left:0;width:260px;padding:7px;background:#fff;border:1px solid var(--border);border-radius:18px;box-shadow:0 16px 40px #49321920;z-index:10}
+.platform-menu button{display:flex;align-items:center;justify-content:space-between;width:100%;border:0;border-radius:12px;padding:13px 12px;text-align:left;background:transparent;color:var(--ink);cursor:pointer}
+.platform-menu b{display:block;font-size:13px}.platform-menu small{display:block;font-size:11px;color:var(--muted);margin-top:5px}
+.platform-menu button:hover,.platform-menu button:focus-visible{background:#fff8eb}
+.platform-menu [aria-checked=true]{background:#fff3d9}.platform-menu i{font-style:normal;color:#b86c00}.platform-menu [aria-checked=false] i{visibility:hidden}
+button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #f59e0b;outline-offset:4px}
+footer nav{font-size:11px;gap:24px;flex-shrink:0;align-items:center;white-space:nowrap}
+@media(max-width:900px){.hero{gap:28px}.download-control{gap:9px}.stage:before{inset:0 -8px 0 8px}}
+@media(max-width:720px){header{padding:0 22px;height:78px}.hero{grid-template-columns:1fr;padding:30px 22px 45px;gap:30px}.intro{max-width:420px}.stage{padding:18px 5px 0}.stage:before{inset:0}.features{padding:25px 22px 40px}.section-head{display:block}.cards{grid-template-columns:1fr}footer{padding:25px 22px;flex-wrap:wrap}h1{font-size:54px}}
+.contact-open{border:0;padding:0;background:transparent;color:inherit;font:inherit;cursor:pointer;white-space:nowrap;flex-shrink:0}.contact-open:hover{text-decoration:underline}
+#contact-dialog{width:min(720px,calc(100% - 24px));padding:clamp(12px,4vw,30px);border:1px solid var(--border);border-radius:22px;background:var(--paper);color:var(--ink);box-shadow:0 24px 80px #29251f26}
+#contact-dialog::backdrop{background:#29251f55}
+#contact-dialog h2{font-size:22px;margin:0 0 12px}
+#contact-dialog p{font-size:clamp(10px,2.6vw,18px);margin:0 0 12px;white-space:nowrap}
+.contact-email{font-size:inherit;text-decoration:underline;text-underline-offset:4px}
+#contact-dialog form{margin-top:26px;text-align:right}
+.contact-close{border:0;border-radius:999px;padding:11px 23px;background:#f59e0b;color:#302007;cursor:pointer}
+.contact-close:hover{background:#fbbf24}
+</style>
+</head>
+<body>
+<header><a class="logo" href="#"><img src="./icon.png" alt="">GLINE</a><span class="edition">LESS NOISE. MORE DONE.</span></header>
+<main>
+<section class="hero"><div><div class="eyebrow">你的 AI 桌面待办</div><h1>想清楚，<br><span>做得到。</span></h1><p class="intro">从随手记下的一句话，到清楚可执行的待办。用 AI 整理思路、改写表达，让每一步都有方向。</p><div class="download-control"><div class="platform-picker" id="picker"><button type="button" id="platform" aria-label="选择下载平台和架构" aria-haspopup="menu" aria-expanded="false" aria-controls="platform-menu"><span id="platform-label">Windows · 64 位</span><span class="chevron" aria-hidden="true">⌄</span></button><div id="platform-menu" class="platform-menu" role="menu" aria-label="下载平台和架构" hidden><button type="button" role="menuitemradio" aria-checked="true" data-platform="windows" tabindex="-1"><span><b>Windows · 64 位</b><small>Intel / AMD x64</small></span><i aria-hidden="true">✓</i></button><button type="button" role="menuitemradio" aria-checked="false" data-platform="mac" tabindex="-1"><span><b>macOS · 通用版</b><small>Apple 芯片 / Intel · macOS 12+</small></span><i aria-hidden="true">✓</i></button></div></div><a class="download-button" id="download" href="./G-Line-win64.exe" download>下载 GLINE <span aria-hidden="true">↓</span></a></div><div class="fine">支持 Windows x64 / macOS 12+ · 桌面应用<span id="version"></span></div></div>
+<figure class="stage"><div class="window"><div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><img class="workspace" src="./assets/gline-workspace-current.png" width="1620" height="1140" alt="GLINE 实际界面：左侧日历下方为长期项目与搜索栏，右侧为今日必做和今日想做。"></div></figure></section>
+<section class="features" id="features"><div class="section-head"><h2>不止记下来，更帮你理清楚。</h2><span>THINK → ORGANIZE → DO</span></div><div class="cards"><article class="card"><span class="number">01 / CAPTURE</span><h3>AI 速记</h3><p>把口述或粘贴的草稿，整理成多条今日必做事项。想法有了着落，行动就有了起点。</p></article><article class="card"><span class="number">02 / REFINE</span><h3>AI 改写</h3><p>在事项与报告中优化表达，预览改写结果，再决定是否采用。你的意图，表达得更清楚。</p></article><article class="card"><span class="number">03 / REFLECT</span><h3>AI 分析</h3><p>用 AI 辅助回顾和分析，让记录不止停在列表里，也成为下一步的参考。</p></article></div></section>
+</main><footer><span>GLINE · 给行动一个清晰的起点。</span><nav aria-label="网站信息"><a href="./privacy.html">隐私说明</a><button type="button" class="contact-open" id="contact-open" aria-haspopup="dialog">合作联系</button></nav></footer>
+<dialog id="contact-dialog" aria-labelledby="contact-title" aria-describedby="contact-description">
+  <h2 id="contact-title">合作联系</h2>
+  <p id="contact-description">有合作意向，欢迎发送邮件至：<a class="contact-email" href="mailto:panggu999@yeah.net">panggu999@yeah.net</a></p>
+  <form method="dialog"><button class="contact-close" autofocus>知道了</button></form>
+</dialog>
+<script>
+const picker=document.getElementById('picker'),trigger=document.getElementById('platform'),menu=document.getElementById('platform-menu'),download=document.getElementById('download');
+const options=[...menu.querySelectorAll('[data-platform]')];
+let selected=/Mac/i.test(navigator.platform)?'mac':'windows';
+function selectPlatform(value){
+  selected=value;
+  const mac=value==='mac',label=mac?'macOS · 通用版':'Windows · 64 位',file=mac?'G-Line.dmg':'G-Line-win64.exe';
+  document.getElementById('platform-label').textContent=label;
+  trigger.setAttribute('aria-label','选择下载平台和架构，当前：'+label);
+  download.href='./'+file;download.download=file;download.setAttribute('aria-label','下载 GLINE '+label);
+  options.forEach(option=>option.setAttribute('aria-checked',String(option.dataset.platform===value)));
+}
+function closeMenu(focus=false){menu.hidden=true;trigger.setAttribute('aria-expanded','false');if(focus)trigger.focus();}
+function openMenu(index=options.findIndex(option=>option.dataset.platform===selected)){menu.hidden=false;trigger.setAttribute('aria-expanded','true');options[index].focus();}
+trigger.addEventListener('click',()=>menu.hidden?openMenu():closeMenu(true));
+trigger.addEventListener('keydown',event=>{if(['ArrowDown','ArrowUp'].includes(event.key)){event.preventDefault();openMenu(event.key==='ArrowDown'?0:options.length-1);}});
+options.forEach(option=>option.addEventListener('click',()=>{selectPlatform(option.dataset.platform);closeMenu(true);}));
+picker.addEventListener('keydown',event=>{
+  if(menu.hidden)return;
+  if(event.key==='Escape'){event.preventDefault();closeMenu(true);}
+  if(event.key==='Tab')closeMenu();
+  if(event.target===trigger)return;
+  if(['ArrowDown','ArrowUp','Home','End'].includes(event.key)){
+    event.preventDefault();const index=options.indexOf(document.activeElement);
+    options[event.key==='Home'?0:event.key==='End'?options.length-1:(index+(event.key==='ArrowDown'?1:-1)+options.length)%options.length].focus();
+  }
+});
+document.addEventListener('pointerdown',event=>{if(!picker.contains(event.target))closeMenu();});
+picker.addEventListener('focusout',event=>{if(!picker.contains(event.relatedTarget))closeMenu();});
+selectPlatform(selected);
+fetch('./version.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(v=>{if(v?.version)document.getElementById('version').textContent=' · v'+String(v.version).replace('+','.');}).catch(()=>{});
+const contactDialog=document.getElementById('contact-dialog');
+document.getElementById('contact-open').addEventListener('click',()=>contactDialog.showModal());
+contactDialog.addEventListener('click',event=>{
+  const rect=contactDialog.getBoundingClientRect();
+  if(event.target===contactDialog&&(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom))contactDialog.close();
+});
+</script>
+</body></html>
