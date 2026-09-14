@@ -1,15 +1,15 @@
-# G-Line
+# GLine
 
 一件一件，慢慢实现。
 
-G-Line 是一款每日事项工具。本仓库是官方下载站，托管安装包与自动更新清单。
+GLine 是一款每日事项工具。本仓库是官方下载站，托管安装包与自动更新清单。
 
 ## 下载
 
 | 平台 | 要求 | 安装包 |
 | --- | --- | --- |
-| macOS（Apple 芯片 + Intel） | macOS 12+ | [G-Line.dmg](https://panggu999.github.io/GLINE/G-Line.dmg) |
-| Windows 64 位 | x64 | [G-Line-win64.exe](https://panggu999.github.io/GLINE/G-Line-win64.exe) |
+| macOS（Apple 芯片 + Intel） | macOS 12+ | [GLine.dmg](https://panggu999.github.io/GLINE/GLine.dmg) |
+| Windows 64 位 | x64 | [GLine-win64.exe](https://panggu999.github.io/GLINE/GLine-win64.exe) |
 
 或直接访问下载页：https://panggu999.github.io/GLINE/
 
