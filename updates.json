@@ -1,19 +1,19 @@
 {
-  "version": "2026.10.9+1",
-  "notes": "更新说明：\n1、新增支持日间、夜间、自动三种模式\n2、添加事项时，AI 优化支持识别出多个事项并自动分条\n3、主界面各区域支持自定义宽度\n4、修复多项问题",
-  "pub_date": "2026-10-11T16:47:01Z",
+  "version": "2026.10.14+1",
+  "notes": "更新说明：\n1、标志与打勾改回绿色\n2、设置里更换形象后，桌宠跟着更新\n3、打开设置和启动不再被大图堵住，换图时不抢焦点\n4、桌宠换图进度与主窗口对齐，并保住完整形象\n5、关掉正在下载的更新后，不再继续安装",
+  "pub_date": "2026-10-14T16:45:18Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSS1Z0dkxMVUVEVmtsMlhiWDVkaWxMeVdtbEtwdEJOUkRqdlhvS215SWY3aytIYXhVNUNBWGptN3lGWDJLMWl1b0hYZ0QySVBEVG1qTzJoNjBZaHJDMDE4NzZhNC9heFFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNzM2Nzg4CWZpbGU6R0xpbmUuYXBwLnRhci5negpKQzRuWnNXQVhOTms5QkVlL0VwcERTeTd3UElrZkJTUjlnZUZsZ3BuNWZXeFNXeE9aYU5kVjNXRkcwK2tIZXFUSGZEWVdMa3RPSTIwV2dnb1BuTlJEQT09Cg==",
-      "url": "https://panggu999.github.io/GLINE/GLine_2026.10.9+1_universal.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSS1Z0dkxMVUVEVmg3THNLT0JieHVtRFRBTmNmTnBYZ1dOVXNnZkJ3YVVZMGFCYjB4ZmVUbURaUW1ndk1reGd2bzZ5eVd6MEtzd3BheHd6Y1ExWjlQVU1iWEMrNEJ4OEFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxOTk2Mjk0CWZpbGU6R0xpbmUuYXBwLnRhci5negpnWitGRmoxMHM2N3hBRitscitRcytLMlNhY3M1Q0hYallhWTk3L285Wk51MEgzODhyTU9SQ0wySUNaQUNiRk1lTXM1M2JSWmwxanc1SzNjYktNZkZBQT09Cg==",
+      "url": "https://panggu999.github.io/GLINE/GLine_2026.10.14+1_universal.app.tar.gz"
     },
     "darwin-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSS1Z0dkxMVUVEVmtsMlhiWDVkaWxMeVdtbEtwdEJOUkRqdlhvS215SWY3aytIYXhVNUNBWGptN3lGWDJLMWl1b0hYZ0QySVBEVG1qTzJoNjBZaHJDMDE4NzZhNC9heFFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNzM2Nzg4CWZpbGU6R0xpbmUuYXBwLnRhci5negpKQzRuWnNXQVhOTms5QkVlL0VwcERTeTd3UElrZkJTUjlnZUZsZ3BuNWZXeFNXeE9aYU5kVjNXRkcwK2tIZXFUSGZEWVdMa3RPSTIwV2dnb1BuTlJEQT09Cg==",
-      "url": "https://panggu999.github.io/GLINE/GLine_2026.10.9+1_universal.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSS1Z0dkxMVUVEVmg3THNLT0JieHVtRFRBTmNmTnBYZ1dOVXNnZkJ3YVVZMGFCYjB4ZmVUbURaUW1ndk1reGd2bzZ5eVd6MEtzd3BheHd6Y1ExWjlQVU1iWEMrNEJ4OEFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxOTk2Mjk0CWZpbGU6R0xpbmUuYXBwLnRhci5negpnWitGRmoxMHM2N3hBRitscitRcytLMlNhY3M1Q0hYallhWTk3L285Wk51MEgzODhyTU9SQ0wySUNaQUNiRk1lTXM1M2JSWmwxanc1SzNjYktNZkZBQT09Cg==",
+      "url": "https://panggu999.github.io/GLINE/GLine_2026.10.14+1_universal.app.tar.gz"
     },
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSS1Z0dkxMVUVEVnViRDVVTm42WjMwUzhTaEZhZ2doSkhoNFhlYk9KK3NmcUQzQkRua2cxOHVnWlZyYVJXbG4rajNORzF4ZTJnQ0tSeGdRN3V2aXBhTnBWRzhuaUI2ZEFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNzE1MjY4CWZpbGU6R0xpbmVfMjAyNi4xMC45KzFfeDY0LXNldHVwLmV4ZQplOHp1YUtoNGd6TkRmTTNHWndDT2JGWlUxSzFmQnNxREI2eTgvM1ZYL0NZVTNsZ3lFZ3hyV0s1SzJGVUhkdWVKS3ZrMjJYUVdlbVFZZm5JeU5NSkFDZz09Cg==",
-      "url": "https://panggu999.github.io/GLINE/GLine_2026.10.9+1_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSS1Z0dkxMVUVEVnZQekJZMng4OU5aZzU2bEhzdzBtNjlGakZteWN0cnpnVndudjZyMkFnRkFJVyszYnM3dEtrU1dDQXRSUnU4SHl4NEtvc3FudWhnMWRWSUMyTnd1UVFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxOTkyOTU2CWZpbGU6R0xpbmVfMjAyNi4xMC4xNCsxX3g2NC1zZXR1cC5leGUKcVJWVzBMWDRoQlNPc1NUMi9kR3ZYcjUzaEhMaThRT3hYWUVyVUw5Z2RDUi80K2hSdk5aZmtoby9iaWlwT0cxVUxOYU9JU2pyZmtjMTcrVXNCR3NVQ2c9PQo=",
+      "url": "https://panggu999.github.io/GLINE/GLine_2026.10.14+1_x64-setup.exe"
     }
   }
 }
