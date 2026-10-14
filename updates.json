@@ -1,7 +1,7 @@
 {
   "version": "2026.10.14+1",
-  "notes": "更新说明：\n1、标志与打勾改回绿色\n2、设置里更换形象后，桌宠跟着更新\n3、打开设置和启动不再被大图堵住，换图时不抢焦点\n4、桌宠换图进度与主窗口对齐，并保住完整形象\n5、关掉正在下载的更新后，不再继续安装",
-  "pub_date": "2026-10-14T16:45:18Z",
+  "notes": "更新说明：\n1、样式优化",
+  "pub_date": "2026-10-14T16:58:20Z",
   "platforms": {
     "darwin-aarch64": {
       "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSS1Z0dkxMVUVEVmg3THNLT0JieHVtRFRBTmNmTnBYZ1dOVXNnZkJ3YVVZMGFCYjB4ZmVUbURaUW1ndk1reGd2bzZ5eVd6MEtzd3BheHd6Y1ExWjlQVU1iWEMrNEJ4OEFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxOTk2Mjk0CWZpbGU6R0xpbmUuYXBwLnRhci5negpnWitGRmoxMHM2N3hBRitscitRcytLMlNhY3M1Q0hYallhWTk3L285Wk51MEgzODhyTU9SQ0wySUNaQUNiRk1lTXM1M2JSWmwxanc1SzNjYktNZkZBQT09Cg==",
