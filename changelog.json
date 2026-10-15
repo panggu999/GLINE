@@ -1,6 +1,10 @@
 {
   "releases": [
     {
+      "version": "2026.10.15",
+      "notes": []
+    },
+    {
       "version": "2026.10.14",
       "notes": [
         "样式优化"
